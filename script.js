@@ -22,64 +22,43 @@ function getPlayerSelection() {
     }
 }
 
-let playerWinCount = 0
-let computerWinCount = 0
-
 function playRound(playerSelection, computerSelection) {
-    switch (playerSelection) {
-        case "rock":
-            if (computerSelection === "rock") {
-                alert("It's a draw!")
-            }
-            else if (computerSelection === "paper") {
-                alert("You lose! Paper beats rock.")
-                computerWinCount++
-            }
-            else {
-                alert("You win! Rock beats scissors.")
-                playerWinCount++
-            }
-            break
-        case "paper":
-            if (computerSelection === "rock") {
-                alert("You win! Paper beats rock.")
-                playerWinCount++
-            }
-            else if (computerSelection === "paper") {
-                alert("It's a draw!")
-            }
-            else {
-                alert("You lose! Scissors beat paper.")
-                computerWinCount++
-            }
-            break
-        case "scissors":
-            if (computerSelection === "rock") {
-                alert("You lose! Rock beats scissors.")
-                computerWinCount++
-            }
-            else if (computerSelection === "paper") {
-                alert("You win! Scissors beat paper.")
-                playerWinCount++
-            }
-            else {
-                alert("It's a draw!")
-            }
-            break
+    let moveToCounterMove = {
+        "rock": "paper",
+        "paper": "scissors",
+        "scissors": "rock"
+    }
+
+    if (playerSelection == computerSelection) {
+        alert("It's a draw!")
+        return 0
+    }
+    else {
+        let counterMove = moveToCounterMove[playerSelection]
+        if (computerSelection === counterMove) {
+            alert(`You lose: ${computerSelection} beats ${playerSelection}`)
+            return -1
+        }
+        else {
+            alert(`You win: ${playerSelection} beats ${computerSelection}`)
+            return 1
+        }
     }
 }
 
 function game() {
+    let score = 0
+
     for (let i = 0; i < 5; i++) {
         let playerSelection = getPlayerSelection()
         let computerSelection = getComputerSelection()
-        playRound(playerSelection, computerSelection)
+        score += playRound(playerSelection, computerSelection)
     }
 
-    if (playerWinCount === computerWinCount) {
+    if (score === 0) {
         alert("You drew in the game. Refresh the game to play again!")
     }
-    else if (playerWinCount > computerWinCount) {
+    else if (score > 0) {
         alert("You won the game. Refresh the game to play again!")
     }
     else {
