@@ -1,0 +1,88 @@
+body {
+    font-family: Helvetica, Verdana, sans-serif;
+    background-color: #fdeded;
+}
+
+h1 {
+    color: #86475f;
+    text-align: center;
+    font-size: 75px;
+}
+
+.player-option-icon, .computer-option-icon {
+    background-color: #FDE4CF;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    width: 200px;
+    transition-duration: 0.4s;
+}
+
+.player-option-icon:hover, .option-active {
+    background-color: #fde4cf73;
+    border: 3px solid #dd979b;
+}
+
+.computer-option-icon:hover {
+    cursor: default;
+}
+
+.selections {
+    display: grid;
+    grid-template-columns: 1000px 1000px;
+    text-align: center;
+    justify-content: center;
+}
+
+h2 {
+    color: #dd979b;
+    font-size: 32px;
+    text-align: center;
+}
+
+.score {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+#score_tracker {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+#score_tracker div {
+    display: inline-block;
+    color: #927072;
+    font-size: 32px;
+}
+
+.replay {
+    text-align: center;
+    margin-top: 60px;
+}
+
+#replay_button {
+    background-color: #FFCFD2;
+    border-radius: 10px;
+    border: none;
+    color: #86475f;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    visibility: hidden;
+}
+
+#replay_button:hover {
+    background-color: #ffcfd291;
+    cursor: pointer;
+}
+
+#winner_result {
+    color: #dd979b;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 32px;
+}

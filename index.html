@@ -5,11 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <script src="script.js"></script>
+    <h1>Rock Paper Scissors</h1>
+    <br>
+
+    <div class="selections">
+        <div id="player_selection">
+            <h2>Player Selection</h2>
+            <input type="image" src="images/rock.png" name="rock" class="player-option-icon" id="player-rock"
+                alt="rock vector image">
+            <input type="image" src="images/paper.png" name="paper" class="player-option-icon" id="player-paper"
+                alt="paper vector image">
+            <input type="image" src="images/scissors.png" name="scissors" class="player-option-icon"
+                id="player-scissors" alt="scissors vector image">
+        </div>
+        <div id="computer_selection">
+            <h2>Computer Selection</h2>
+            <input type="image" src="images/rock.png" class="computer-option-icon" id="computer-rock"
+                alt="rock vector image">
+            <input type="image" src="images/paper.png" class="computer-option-icon" id="computer-paper"
+                alt="paper vector image">
+            <input type="image" src="images/scissors.png" class="computer-option-icon" id="computer-scissors"
+                alt="scissors vector image">
+        </div>
+    </div>
+    <br>
+
+    <div class="score">
+        <h2>Score</h2>
+        <div id="score_tracker">
+            <div id="player_score">0</div>
+            <div> - </div>
+            <div id="computer_score">0</div>
+        </div>
+    </div>
+    <br>
+
+    <div id="winner_result">Make your move</div>
+    <br>
+
+    <div class="replay">
+        <button type="button" id="replay_button">Play again</button>
+    </div>
 </body>
 
 </html>
